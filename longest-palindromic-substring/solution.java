@@ -6,6 +6,17 @@ class Solution {
             return "";
         }
         
+        boolean allSame = true;
+        for(int i = 1; i < s.length(); ++i) {
+            if(s.charAt(i) != s.charAt(0)) {
+                allSame = false;
+                break;
+            }
+        }
+        if(allSame) {
+            return s;
+        }
+        
         List<Integer> list2Core = find2Core(s);
         List<Integer> list3Core = find3Core(s);
         
