@@ -11,21 +11,14 @@ class Solution {
         }
         
         for(int i = num1.length() - 1; i >= 0; --i) {
-            a = toDigit(num1.charAt(i));
-            b = toDigit(num2.charAt(i));
+            a = (int)(num1.charAt(i) - '0');
+            b = (int)(num2.charAt(i) - '0');
             s = a + b + c;
             c = s / 10;
             s %= 10;
-            sb.append(toChar(s));
+            sb.append((char)(s + '0'));
         }
         if(c > 0) sb.append(1);
         return sb.reverse().toString();
-    }
-    
-    private int toDigit(char c) {
-        return (int) (c - 48);
-    }
-    private char toChar(int i) {
-        return (char)(i + 48);
     }
 }
